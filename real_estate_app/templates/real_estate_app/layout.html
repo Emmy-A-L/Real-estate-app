@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% if 'index.html' %}
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">k
+    {% endif %}
+
+    {% if 'about.html' %}
+        <link rel="stylesheet" href="{% static 'css/about.css' %}">k
+    {% endif %}
+    
+    {% if 'listing.html' %}
+        <link rel="stylesheet" href="{% static 'css/listing.css' %}">k
+    {% endif %}
+    
+    {% if 'contact.html' %}
+        <link rel="stylesheet" href="{% static 'css/contact.css' %}">k
+    {% endif %}
+
+
+
+    {% block title %}
+        <title>Django App</title>
+    {% endblock %}
+</head>
+<body>
+
+    <nav>
+        {% comment "for clarification" %}
+            enter the navigation code here so we can extend it to other pages..
+        {% endcomment %}
+    </nav>
+    
+
+    {% comment  %}
+
+        every new page must start with {% extends 'layout.html' %} so all necessary code within the layout file can be shared to the new pages..
+        
+        for every page, the content should be placed inside the {% block %} and {% endblock %} tags.
+        to ensure the content is displayed on every page.
+    
+    {% endcomment %}
+
+
+    <main>
+        {% block content %}
+
+
+
+        {% endblock %}
+    </main>
+
+
+
+    <footer>
+        {% comment "for clarification" %}
+            enter the footer code here so we can extend it to other pages..
+        {% endcomment %}
+    </footer>
+
+</body>
+</html>
